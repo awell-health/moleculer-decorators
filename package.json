@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/ColonelBundy/moleculer-decorators#readme",
   "dependencies": {
+    "@moleculer/channels": "^0.1.8",
     "moleculer": "^0.14.32"
   },
   "devDependencies": {

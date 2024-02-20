@@ -43,6 +43,10 @@ export interface EventOptions extends Partial<EventSchema> {
   handler?: ServiceEventHandler; // not really used
 }
 
+export interface ChannelOptions {
+  name?: string;
+}
+
 export function Method(target, key: string, descriptor: PropertyDescriptor) {
   (target.methods || (target.methods = {}))[key] = descriptor.value;
 }
@@ -72,6 +76,17 @@ export function Action(options: ActionOptions = {}) {
         }
       : options.skipHandler
       ? ""
+      : descriptor.value;
+  };
+}
+
+export function Channel(options: ChannelOptions = {}) {
+  return function (target, key: string, descriptor: PropertyDescriptor) {
+    (target.channels || (target.channels = {}))[key] = options
+      ? {
+          ...options,
+          handler: descriptor.value,
+        }
       : descriptor.value;
   };
 }
@@ -173,7 +188,12 @@ export function Service<T extends Options>(opts: T = {} as T): Function {
         return;
       }
 
-      if (key === "events" || key === "methods" || key === "actions") {
+      if (
+        key === "events" ||
+        key === "methods" ||
+        key === "actions" ||
+        key === "channels"
+      ) {
         base[key]
           ? Object.assign(base[key], descriptor.value)
           : (base[key] = descriptor.value);
