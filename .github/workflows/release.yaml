@@ -34,5 +34,7 @@ jobs:
 
       - name: Publish new version to NPM Registry
         run: |
+          git config --global user.name "Awell CI"
+          git config --global user.email "ci@awellhealth.com"
           yarn version --patch
           yarn npm publish --access public
