@@ -35,4 +35,4 @@ jobs:
       - name: Publish new version to NPM Registry
         run: |
           yarn version --patch
-          yarn npm publish
+          yarn npm publish --access public

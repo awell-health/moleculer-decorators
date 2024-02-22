@@ -1,6 +1,6 @@
 {
   "name": "@awell-health/moleculer-decorators",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "decorators for moleculer",
   "main": "dist/index.js",
   "packageManager": "yarn@3.4.1",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ColonelBundy/moleculer-decorators.git"
+    "url": "git+https://github.com/awell-health/moleculer-decorators.git"
   },
   "keywords": [
     "microservices",
@@ -29,9 +29,9 @@
     "moleculer"
   ],
   "bugs": {
-    "url": "https://github.com/ColonelBundy/moleculer-decorators/issues"
+    "url": "https://github.com/awell-health/moleculer-decorators/issues"
   },
-  "homepage": "https://github.com/ColonelBundy/moleculer-decorators#readme",
+  "homepage": "https://github.com/awell-health/moleculer-decorators#readme",
   "dependencies": {
     "@moleculer/channels": "^0.1.8",
     "moleculer": "^0.14.32"
