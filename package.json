@@ -3,7 +3,6 @@
   "version": "1.4.2",
   "description": "decorators for moleculer",
   "main": "dist/index.js",
-  "packageManager": "yarn@3.4.1",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/*",
