@@ -12,8 +12,7 @@
     "compile": "yarn run clean && tsc && node dist/index.js",
     "dev": "nodemon --delay 2000 -e ts --exec \"yarn run compile\"",
     "test": "jest --coverage --forceExit --detectOpenHandles",
-    "preversion": "yarn run lint && yarn run tsc",
-    "postversion": "git push && git push --follow-tags"
+    "preversion": "yarn run lint && yarn run tsc"
   },
   "author": "Colonelbundy <colonelbundy@gmail.com>",
   "license": "MIT",
