@@ -5,6 +5,8 @@ import {
   ServiceBroker,
   ServiceEventHandler,
   EventSchema,
+  TracingOptions,
+  TracingEventTags,
 } from "moleculer";
 import * as _ from "./util";
 
@@ -43,8 +45,13 @@ export interface EventOptions extends Partial<EventSchema> {
   handler?: ServiceEventHandler; // not really used
 }
 
+export interface ChannelTracingOptions extends TracingOptions {
+  tags?: TracingEventTags;
+}
+
 export interface ChannelOptions {
   name?: string;
+  tracing: ChannelTracingOptions;
 }
 
 export function Method(target, key: string, descriptor: PropertyDescriptor) {
@@ -80,7 +87,8 @@ export function Action(options: ActionOptions = {}) {
   };
 }
 
-export function Channel(options: ChannelOptions = {}) {
+// I'm mimicking Event here for the API
+export function Channel(options?: ChannelOptions) {
   return function (target, key: string, descriptor: PropertyDescriptor) {
     (target.channels || (target.channels = {}))[key] = options
       ? {

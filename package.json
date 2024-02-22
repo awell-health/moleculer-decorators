@@ -1,5 +1,5 @@
 {
-  "name": "moleculer-decorators",
+  "name": "@awell-health/moleculer-decorators",
   "version": "1.4.0",
   "description": "decorators for moleculer",
   "main": "dist/index.js",
