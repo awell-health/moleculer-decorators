@@ -13,7 +13,8 @@
     "esModuleInterop": true,
     "noLib": false,
     "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    // "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist",
     "baseUrl": "./src/",
     "paths": {
