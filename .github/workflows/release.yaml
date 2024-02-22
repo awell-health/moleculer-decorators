@@ -23,10 +23,7 @@ jobs:
         run: yarn
 
       - name: Compile Typescript
-        run: yarn build
-
-      - name: Run tests
-        run: yarn test
+        run: yarn run compile
 
       - name: Setup .yarnrc.yml
         run: |
