@@ -1,24 +1,24 @@
 {
   "name": "@awell-health/moleculer-decorators",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "description": "decorators for moleculer",
   "main": "dist/index.js",
+  "packageManager": "yarn@3.4.1",
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist/*",
     "tsc": "tsc",
-    "lint": "tslint -p tsconfig.json",
-    "compile": "npm run clean && tsc && node dist/index.js",
-    "dev": "nodemon --delay 2000 -e ts --exec \"npm run compile\"",
+    "lint": "eslint",
+    "compile": "yarn run clean && tsc && node dist/index.js",
+    "dev": "nodemon --delay 2000 -e ts --exec \"yarn run compile\"",
     "test": "jest --coverage --forceExit --detectOpenHandles",
-    "preversion": "npm run lint && npm run tsc && npm run test",
-    "postversion": "git push && git push --follow-tags"
+    "preversion": "yarn run lint && yarn run tsc"
   },
   "author": "Colonelbundy <colonelbundy@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ColonelBundy/moleculer-decorators.git"
+    "url": "git+https://github.com/awell-health/moleculer-decorators.git"
   },
   "keywords": [
     "microservices",
@@ -29,9 +29,9 @@
     "moleculer"
   ],
   "bugs": {
-    "url": "https://github.com/ColonelBundy/moleculer-decorators/issues"
+    "url": "https://github.com/awell-health/moleculer-decorators/issues"
   },
-  "homepage": "https://github.com/ColonelBundy/moleculer-decorators#readme",
+  "homepage": "https://github.com/awell-health/moleculer-decorators#readme",
   "dependencies": {
     "@moleculer/channels": "^0.1.8",
     "moleculer": "^0.14.32"
@@ -40,6 +40,8 @@
     "@types/jest": "^29.1.2",
     "@types/node": "^12.12.26",
     "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "eslint": "^8.34.0",
     "jest": "^29.7.0",
     "moleculer-db": "^0.8.25",
     "moleculer-web": "^0.10.7",
@@ -52,7 +54,7 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "rootDir": "./services",
+    "rootDir": "./test",
     "roots": [
       "../test"
     ],

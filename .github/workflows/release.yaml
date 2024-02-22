@@ -23,10 +23,7 @@ jobs:
         run: yarn
 
       - name: Compile Typescript
-        run: yarn build
-
-      - name: Run tests
-        run: yarn test
+        run: yarn run compile
 
       - name: Setup .yarnrc.yml
         run: |
@@ -37,5 +34,5 @@ jobs:
 
       - name: Publish new version to NPM Registry
         run: |
-          yarn version -i patch
-          yarn npm publish
+          yarn version --patch
+          yarn npm publish --access public
